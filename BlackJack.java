@@ -54,6 +54,8 @@ public class BlackJack extends Applet implements ActionListener
         g.setColor(new Color(34, 150, 34));
         g.fillRect(0,0,500,449);
         isTableDrawn = true;
+        hit.setLocation(350, 450);
+        stand.setLocation(425, 450);
     }
     
     public void actionPerformed(ActionEvent e)
