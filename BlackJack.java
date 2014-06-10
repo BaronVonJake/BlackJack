@@ -2,8 +2,10 @@
 import java.util.ArrayList;
 import java.awt.*;
 import java.applet.*;
+import java.awt.event.*;
+import java.awt.Image.*;
 
-public class BlackJack extends Applet
+public class BlackJack extends Applet implements ActionListener
 {
     public CardDeck deck;
     public Player p1;
@@ -14,6 +16,16 @@ public class BlackJack extends Applet
     {
         deck = new CardDeck();
         p1 = new Player();
+        
+        hit = new Button("Hit");
+        hit.setPreferredSize(new Dimension(75, 50));
+        add(hit);
+        hit.addActionListener(this);
+        
+        stand = new Button("Stand");
+        stand.setPreferredSize(new Dimension(75, 50));
+        add(stand);
+        stand.addActionListener(this);
     }
     
     
@@ -44,12 +56,27 @@ public class BlackJack extends Applet
         isTableDrawn = true;
     }
     
+    public void actionPerformed(ActionEvent e)
+    {
+        Button source = (Button)e.getSource();
+        if(source.getLabel() == "Hit")
+        {
+            x = 1;
+            repaint();
+        }
+        else if(source.getLabel() == "Stand")
+        {
+            x = 2;
+            repaint();
+        }
+    }
+    
     public void drawCards(Graphics g)
     {
         //Counts the amount of cards in player's hand.
         //For Loop to draw the correct number of cards.
         //display's image based on return given from checkCard() method.
-        //Puts the cards all next to each other in a row.  
+        //Puts the cards all next to each other in a row.
     }
     
     public String checkCard(Card c)
