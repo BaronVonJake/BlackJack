@@ -52,8 +52,8 @@ public class CardDeck
 class Card
 {
     private int cardNumber; //Number of card. 11 - Jack 12 - Queen, 13 - King
-    private int suit; //1-13 Spade; 14-26 Clubs; 27-39 Hearts; 40-52 Diamonds. All numbered respectively.
-                            //0 - Spade; 1 - Clubs; 2 - Hearts; 3 - Diamonds
+    private int suit; //1-13 Spades; 14-26 Clubs; 27-39 Hearts; 40-52 Diamonds. All numbered respectively.
+                            //0 - Spades; 1 - Clubs; 2 - Hearts; 3 - Diamonds
     
     public Card(int number)
     {
