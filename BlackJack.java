@@ -225,12 +225,20 @@ class Player
     public int returnValueOfCards()
     {
         int totalVal = 0;
+        int totalAces = 0;
         
         for (Card c : hand)
+            if (c.getCardNum == 1)
+                totalAces++;
             if (c.getCardNum() > 10)
                 totalVal = totalVal + 10;
             else
                 totalVal = totalVal + c.getCardNum();
+                
+        for (int i = 0; i < totalAces; i++)
+            if (totalVal + 10 < 21)
+                totalVal = totalVal + 10;
+        
         return totalVal;
     }
     
